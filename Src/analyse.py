@@ -183,20 +183,21 @@ if __name__ == '__main__':
     parser.add_argument('-c', '--cluster',required=True,
                         help='Path to file with graphs clusters')
     parser.add_argument('-o', '--output',default=None,
-                         help='File to write output, if not provided\
+                        help='Default: None\n File to write output, if not provided\
                          it is written to stdout')
     parser.add_argument('-e', '--exact_len', default=False, type=bool, 
                         choices=(True, False),
-                        help="When true the match must also have the exact\
+                        help="Default: False.\n When true the match must also have the exact\
                         same length")
     parser.add_argument('-b', '--bps', type=int, default=0, choices=(0, 1, 2),
-                         help='How many base pairs surrounding the IL do we\
+                        help='Default: 0.\n How many base pairs surrounding the IL do we\
                          want a sequence match for. We have at most 2')
 
     parser.add_argument('-v', '--verbose', type=bool, default=False, 
                         choices=(True, False), 
                         help='If verbose we print all the matches for each sequence for each cluster')
 
+    args = parser.parse_args()
 
     if not args.verbose:
         number_match_per_cluster(args.input, args.cluster, args.exact_len, args.bps, args.output)
