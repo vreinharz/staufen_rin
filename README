@@ -1,0 +1,14 @@
+There are two scripts:
+    1) draw_single_graph.py: To visualize the graphs
+    2) analyze.py to identify the matches between the pos/neg staufen sequences and clusters
+
+The /Data folder only contain clusters_IL.pickle, which needs to be given as argument to the flag "-c" to analyze.py,
+it is the set of clusters of graphs with non-canonical interactions for which we try to find a match.
+
+Assuming that the data with sequences is at:
+    ../Data/hStau1_SRS_loops/posplus/loops_in_SRS_flanking2nt.txt
+we can run 
+    python3 analyse.py -c ../Data/clusters_IL.pickle -i ../Data/hStau1_SRS_loops/posplus/loops_in_SRS_flanking2nt.txt
+
+To see all the options do:
+    python3 analyze.py -h
